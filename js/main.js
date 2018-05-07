@@ -10,7 +10,15 @@ var markers = []
 document.addEventListener('DOMContentLoaded', (event) => {
   fetchNeighborhoods();
   fetchCuisines();
+  addCopyright();
 });
+
+/**
+ * Add copyright year to footer.
+ */
+addCopyright = () => {
+  document.getElementById('copyright-year').innerText = (new Date()).getFullYear();
+};
 
 /**
  * Fetch all neighborhoods and set their HTML.
