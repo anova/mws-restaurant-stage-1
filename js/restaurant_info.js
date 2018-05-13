@@ -56,8 +56,17 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-  image.className = 'restaurant-img'
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.className = 'restaurant-img';
+  const image_src = DBHelper.imageUrlForRestaurant(restaurant).replace('img/', 'img/responsive/');
+  image.src = image_src.replace('.jpg', '-236.jpg');
+  image.srcset = [
+    image_src.replace('.jpg', '-236.jpg 236w'),
+    image_src.replace('.jpg', '-300.jpg 300w'),
+    image_src.replace('.jpg', '-480.jpg 480w'),
+    image_src.replace('.jpg', '-600.jpg 600w'),
+    image_src.replace('.jpg', '-800.jpg 800w')
+  ].join(', ');
+  image.sizes = "(min-width: 50rem) calc(50vw - 80px), calc( 100vw - 80px)";
   image.alt = restaurant.name;
   image.title = restaurant.name;
 
