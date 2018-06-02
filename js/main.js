@@ -2,7 +2,11 @@ let restaurants,
   neighborhoods,
   cuisines;
 var map,
-   markers = []
+   markers = [];
+
+if( 'serviceWorker' in navigator) {
+  navigator.serviceWorker.register('serviceworker.js');
+}
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -89,6 +93,14 @@ window.initMap = () => {
     scrollwheel: false
   });
   updateRestaurants();
+  /**
+  * Remove tabindex from google maps
+  */
+  google.maps.event.addListener(self, "tilesloaded", function(){
+    [].slice.apply(document.querySelectorAll('#map a')).forEach(function(item) {
+        item.setAttribute('tabindex','-1');
+    });
+  });
 }
 
 /**
@@ -154,7 +166,7 @@ createRestaurantHTML = (restaurant) => {
   image.title = restaurant.name;
   li.append(image);
 
-  const name = document.createElement('h1');
+  const name = document.createElement('h2');
   name.innerHTML = restaurant.name;
   li.append(name);
 
