@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
@@ -17,15 +17,15 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map" tabindex="-1"></div>
+      <div id="map" aria-label="location" role="application" tabindex="-1"></div>
     </section>
     <section>
-      <div class="filter-options">
-        <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+      <div class="filter-options" aria-labelledby="filter-title" role="search">
+        <h2 id="filter-title">Filter Results</h2>
+        <select aria-label="Select a Neighborhood" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
           <option value="all">All Neighborhoods</option>
         </select>
-        <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+        <select aria-label="Select a Cuisine" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>
         </select>
       </div>
@@ -35,6 +35,8 @@
 
   <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
   <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <!-- common js between pages -->
+  <script src="js/common.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdXVbQtrQOWGfxeQNM7BxOLM0LGqZPsp0&libraries=places&callback=initMap"></script>
   <!-- test without google maps -->
   <!--

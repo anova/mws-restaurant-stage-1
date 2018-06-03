@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Normalize.css for better cross-browser consistency -->
@@ -22,9 +22,11 @@
       <h1><a href="./">Restaurant Reviews</a></h1>
     </nav>
     <!-- Beginning breadcrumb -->
-    <ul id="breadcrumb" >
-      <li><a href="./">Home</a></li>
-    </ul>
+    <nav id="breadcrumb_nav" role="navigation" aria-label="Breadcrumb">
+      <ul id="breadcrumb">
+        <li><a href="./" role="menuitem">Home</a></li>
+      </ul>
+    </nav>
     <!-- End breadcrumb -->
     <!-- End nav -->
   </header>
@@ -34,12 +36,12 @@
   <main id="maincontent">
     <!-- Beginning map -->
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" aria-label="location" role="application" tabindex="-1"></div>
     </section>
     <!-- End map -->
     <!-- Beginning restaurant -->
     <section id="restaurant-container">
-      <h1 id="restaurant-name"></h1>
+      <h2 id="restaurant-name"></h2>
       <figure id="restaurant-figure">
         <img id="restaurant-img">
         <figcaption id="restaurant-figure-figcaption"></figcaption>
@@ -68,6 +70,8 @@
   <script type="text/javascript" src="js/dbhelper.js"></script>
   <!-- Main javascript file -->
   <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <!-- common js between pages -->
+  <script src="js/common.js"></script>
   <!-- Google Maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdXVbQtrQOWGfxeQNM7BxOLM0LGqZPsp0&libraries=places&callback=initMap"></script>
   <!-- test without google maps -->
@@ -83,8 +87,9 @@
   });
   </script>
   -->
-  <!-- responsive debugger -->
+  <!-- responsive debugger
   <script src="js/responsive-debugger.js"></script>
+  -->
   <!-- End scripts -->
 
 </body>

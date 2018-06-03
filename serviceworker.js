@@ -1,4 +1,4 @@
-const cache_name = 'restaurant-v10';
+const cache_name = 'restaurant-v11';
 
 self.addEventListener('install', function(event) {
   console.log(`service worker: ${cache_name}`);
@@ -7,6 +7,7 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
         './',
         './restaurant.html',
+        './css/styles.css',
         './js/dbhelper.js',
         './js/restaurant_info.js',
         './js/main.js',
