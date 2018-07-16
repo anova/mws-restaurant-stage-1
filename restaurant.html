@@ -66,31 +66,10 @@
   <!-- End footer -->
 
   <!-- Beginning scripts -->
-  <!-- Database helpers -->
-  <script type="text/javascript" src="js/dbhelper.js"></script>
-  <!-- Main javascript file -->
-  <script type="text/javascript" src="js/restaurant_info.js"></script>
-  <!-- common js between pages -->
-  <script src="js/common.js"></script>
+  <script src="js/bundle.js"></script>
   <!-- Google Maps -->
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdXVbQtrQOWGfxeQNM7BxOLM0LGqZPsp0&libraries=places&callback=initMap"></script>
-  <!-- test without google maps -->
-  <!--
-  <script>
-  fetchRestaurantFromURL((error, restaurant) => {
-    if (error) { // Got an error!
-      console.error(error);
-    } else {
-      fillBreadcrumb();
-      DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
-    }
-  });
-  </script>
-  -->
-  <!-- responsive debugger
-  <script src="js/responsive-debugger.js"></script>
-  -->
-  <!-- End scripts -->
+
 
 </body>
 

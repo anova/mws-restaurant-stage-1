@@ -1,4 +1,4 @@
-const cache_name = 'restaurant-v11';
+const cache_name = 'restaurant-v12';
 
 self.addEventListener('install', function(event) {
   console.log(`service worker: ${cache_name}`);
@@ -11,7 +11,6 @@ self.addEventListener('install', function(event) {
         './js/dbhelper.js',
         './js/restaurant_info.js',
         './js/main.js',
-        './data/restaurants.json'
       ]);
     })
   );//waitUntil
